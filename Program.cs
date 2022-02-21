@@ -6,10 +6,11 @@ namespace CA0221
     {
         static void Main(string[] args)
         {
-            var car = new Car("Mazda",-5,76);
+            var car = new Car("Mazda",30,76);
             car.Drive();
-            car.Refuel(15);
+            car.Refuel(46);
             car.Drive();
+            car.Refuel(1);
         }
     }
 }

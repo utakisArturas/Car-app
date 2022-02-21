@@ -19,7 +19,7 @@ namespace CA0221
         {
             if (Fuel > 0)
             {
-                Console.WriteLine("You can drive");
+                Console.WriteLine($"You can drive. Gas in tank - {Fuel}l. ");
             }
             else
             {
@@ -29,11 +29,19 @@ namespace CA0221
         }
 
         public void Refuel(int liters)
-        {
-            if (liters> 0 && liters <= GasTankCapacity)
+        {   
+            
+            if (liters > 0 && Fuel <= GasTankCapacity)
             {
-                Fuel = liters;
+                Fuel =  liters + Fuel;
+                Console.WriteLine($"You filled you gas tank with {liters}l. of gas. Gas in tank {Fuel}");
+                GasTankCapacity = GasTankCapacity - Fuel;
+            }
+            else
+            {
+                Console.WriteLine($"Cant refill. Gass in the tank {Fuel}");
             }
         }
+        
     }
 }
